@@ -1,0 +1,83 @@
+﻿<Window x:Class="ToDoList.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToDoList"
+        mc:Ignorable="d"
+        FontFamily="Segoe UI Light" FontSize="18"
+        Title="To Do List - Bartłomiej Skibiński" Icon="/ToDoList;component/Assets/Icon.ico">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        
+        <!-- Menu Grid -->
+        <Grid Grid.Column="0" Background="#FF101820">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="5" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="16" />
+            </Grid.RowDefinitions>
+
+            <Rectangle Grid.Column="1" Grid.RowSpan="4" Fill="#FFFFB612" />
+
+            <!-- Logo -->
+            <Image Grid.Column="0" Grid.Row="1" Source="/Assets/Logo.png" MaxWidth="192" Margin="32, 32, 32, 8" />
+
+            <!-- Menu List -->
+            <StackPanel Grid.Column="0" Grid.Row="2" Margin="0, 16">
+                <Button x:Name="todaysTasksBtn" Style="{StaticResource MenuButtonStyle}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Assets/Icons/TodaysTasks.png" Style="{StaticResource MenuIconStyle}" />
+                        <TextBlock Text="Today's Tasks" Style="{StaticResource MenuButtonText}" />
+                    </StackPanel>
+                </Button>
+                <Button x:Name="allTasksBtn" Style="{StaticResource MenuButtonStyle}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Assets/Icons/AllTasks.png" Style="{StaticResource MenuIconStyle}" />
+                        <TextBlock Text="All Tasks" Style="{StaticResource MenuButtonText}" />
+                    </StackPanel>
+                </Button>
+                <Button x:Name="alertsBtn" Style="{StaticResource MenuButtonStyle}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Assets/Icons/Alerts.png" Style="{StaticResource MenuIconStyle}" />
+                        <TextBlock Text="Alerts" Style="{StaticResource MenuButtonText}" />
+                    </StackPanel>
+                </Button>
+                <Button x:Name="categoriesBtn" Style="{StaticResource MenuButtonStyle}" Click="categoriesBtn_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Assets/Icons/Categories.png" Style="{StaticResource MenuIconStyle}" />
+                        <TextBlock Text="Categories" Style="{StaticResource MenuButtonText}" />
+                    </StackPanel>
+                </Button>
+                <Button x:Name="aboutBtn" Style="{StaticResource MenuButtonStyle}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Assets/Icons/About.png" Style="{StaticResource MenuIconStyle}" />
+                        <TextBlock Text="About" Style="{StaticResource MenuButtonText}" />
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </Grid>
+        
+        <!-- Content Grid -->
+        <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="16" />
+            </Grid.RowDefinitions>
+
+            <Frame x:Name="pageContent" Grid.Column="1" Grid.Row="1" NavigationUIVisibility="Hidden" />
+        </Grid>
+    </Grid>
+</Window>
