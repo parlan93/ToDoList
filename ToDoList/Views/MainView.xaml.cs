@@ -28,7 +28,7 @@ namespace ToDoList
 
         private void categoriesBtn_Click(object sender, RoutedEventArgs e)
         {
-            pageContent.Content = new Categories();
+            pageContent.Content = new CategoriesView();
         }
     }
 }

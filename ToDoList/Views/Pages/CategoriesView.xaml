@@ -1,4 +1,4 @@
-﻿<Page x:Class="ToDoList.Views.Pages.Categories"
+﻿<Page x:Class="ToDoList.Views.Pages.CategoriesView"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -23,5 +23,13 @@
             <TextBlock Grid.Column="0" Grid.Row="0" Text="Categories" Style="{StaticResource PageTitle}"/>
             <Rectangle Grid.Column="0" Grid.Row="1" Style="{StaticResource Separator}" />
         </StackPanel>
+
+        <DataGrid x:Name="tmpGrid" Grid.Column="0" Grid.Row="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding CategoryId}" />
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="Color" Binding="{Binding Color}" />
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Page>
