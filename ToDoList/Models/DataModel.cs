@@ -18,25 +18,25 @@ namespace ToDoList.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Alerts>()
-                .Property(e => e.DateTime)
-                .HasPrecision(53, 0);
+            //modelBuilder.Entity<Alerts>()
+            //    .Property(e => e.DateTime)
+            //    .HasPrecision(53, 0);
 
-            modelBuilder.Entity<Alerts>()
-                .Property(e => e.Active)
-                .HasPrecision(53, 0);
+            //modelBuilder.Entity<Alerts>()
+            //    .Property(e => e.Active)
+            //    .HasPrecision(53, 0);
 
-            modelBuilder.Entity<Tasks>()
-                .Property(e => e.CreationDateTime)
-                .HasPrecision(53, 0);
+            //modelBuilder.Entity<Tasks>()
+            //    .Property(e => e.CreationDateTime)
+            //    .HasPrecision(53, 0);
 
-            modelBuilder.Entity<Tasks>()
-                .Property(e => e.TaskDateTime)
-                .HasPrecision(53, 0);
+            //modelBuilder.Entity<Tasks>()
+            //    .Property(e => e.TaskDateTime)
+            //    .HasPrecision(53, 0);
 
-            modelBuilder.Entity<Tasks>()
-                .Property(e => e.Completed)
-                .HasPrecision(53, 0);
+            //modelBuilder.Entity<Tasks>()
+            //    .Property(e => e.Completed)
+            //    .HasPrecision(53, 0);
         }
     }
 }

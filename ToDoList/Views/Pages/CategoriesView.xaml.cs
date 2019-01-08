@@ -42,7 +42,27 @@ namespace ToDoList.Views.Pages
                 //db.Categories.Add(category);
                 //db.SaveChanges();
 
-                var task = new Tasks() { Name = "FIRST", Categories = db.Categories.Find(1), Completed = 0 };
+                //var task = new Tasks() { Name = "FIRST", Categories = db.Categories.Find(1), Completed = 0 };
+                //db.Tasks.Add(task);
+                //db.SaveChanges();
+
+                //var alert = new Alerts() { Active = true, DateTime = new DateTime(2019, 1, 10, 20, 0, 0) };
+                //db.Alerts.Add(alert);
+                //db.SaveChanges();
+
+                var task = new Tasks()
+                {
+                    Name = "First normal task to do",
+                    CreationDateTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second),
+                    TaskDateTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day + 1, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second),
+                    Completed = false,
+                    Categories = db.Categories.Find(2),
+                    Alerts = db.Alerts.Add(new Alerts()
+                    {
+                        DateTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day + 1, DateTime.Now.Hour - 1, DateTime.Now.Minute, DateTime.Now.Second),
+                        Active = true
+                    })
+                };
                 db.Tasks.Add(task);
                 db.SaveChanges();
 
