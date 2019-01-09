@@ -24,7 +24,18 @@
             <Rectangle Grid.Column="0" Grid.Row="1" Style="{StaticResource Separator}" />
         </StackPanel>
 
-        <DataGrid x:Name="tmpGrid" Grid.Column="0" Grid.Row="2">
-        </DataGrid>
+        <ListView Grid.Column="0" Grid.Row="2" ItemsSource="{Binding Items}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <TextBlock Text="{Binding CategoryId}" />
+                        <TextBlock Text="{Binding Name}" />
+                        <TextBlock Text="{Binding Color}" />
+                        <Rectangle Fill="{Binding Color}" Width="20" Height="20" />
+                        <Button Content="Usuń" Command="{Binding DeleteCategoryCommand}" />
+                    </WrapPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Page>
