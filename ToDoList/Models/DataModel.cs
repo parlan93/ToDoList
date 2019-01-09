@@ -4,12 +4,16 @@ namespace ToDoList.Models
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
+    using System.Configuration;
 
     public partial class DataModel : DbContext
     {
         public DataModel()
             : base("name=DataModel")
         {
+            string executable = System.Reflection.Assembly.GetExecutingAssembly().Location;
+            string path = (System.IO.Path.GetDirectoryName(executable));
+            AppDomain.CurrentDomain.SetData("DataDirectory", path);
         }
 
         public virtual DbSet<Alerts> Alerts { get; set; }
@@ -18,25 +22,7 @@ namespace ToDoList.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            //modelBuilder.Entity<Alerts>()
-            //    .Property(e => e.DateTime)
-            //    .HasPrecision(53, 0);
-
-            //modelBuilder.Entity<Alerts>()
-            //    .Property(e => e.Active)
-            //    .HasPrecision(53, 0);
-
-            //modelBuilder.Entity<Tasks>()
-            //    .Property(e => e.CreationDateTime)
-            //    .HasPrecision(53, 0);
-
-            //modelBuilder.Entity<Tasks>()
-            //    .Property(e => e.TaskDateTime)
-            //    .HasPrecision(53, 0);
-
-            //modelBuilder.Entity<Tasks>()
-            //    .Property(e => e.Completed)
-            //    .HasPrecision(53, 0);
         }
+
     }
 }

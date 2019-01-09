@@ -33,7 +33,7 @@
 
             <!-- Menu List -->
             <StackPanel Grid.Column="0" Grid.Row="2" Margin="0, 16">
-                <Button x:Name="todaysTasksBtn" Style="{StaticResource MenuButtonStyle}">
+                <Button x:Name="todaysTasksBtn" Style="{StaticResource MenuButtonStyle}" Click="todaysTasksBtn_Click">
                     <StackPanel Orientation="Horizontal">
                         <Image Source="/Assets/Icons/TodaysTasks.png" Style="{StaticResource MenuIconStyle}" />
                         <TextBlock Text="Today's Tasks" Style="{StaticResource MenuButtonText}" />
@@ -63,6 +63,7 @@
                         <TextBlock Text="About" Style="{StaticResource MenuButtonText}" />
                     </StackPanel>
                 </Button>
+                <TextBlock x:Name="tmpBlock" Text="Tmp Block" Foreground="White" />
             </StackPanel>
         </Grid>
         

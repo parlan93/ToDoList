@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,9 +27,12 @@ namespace ToDoList
             InitializeComponent();
         }
 
+        private void todaysTasksBtn_Click(object sender, RoutedEventArgs e) {}
+
         private void categoriesBtn_Click(object sender, RoutedEventArgs e)
         {
             pageContent.Content = new CategoriesView();
         }
+        
     }
 }
